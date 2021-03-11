@@ -1,0 +1,8 @@
+﻿Set the startup project to EFCore50
+In the Package Manager Console set Default Project to DataAccess 
+
+
+Add-Migration InitialCreate
+Add-Migration SomeMigration -Context DbContext
+Update-Database 
+Update-Database -Context DbContext
