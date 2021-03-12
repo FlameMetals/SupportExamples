@@ -16,11 +16,11 @@ namespace FFM.DataAccessModels.App
         public virtual customerPartsHeader customerPartsHeader { get; set; }
 
         //ID of the customerLocationsHeader
-        [Column(Order = 200)]
-        [Display(Name = "ID of the customerLocations Header")]
-        public System.Guid customerLocationsHeaderId { get; set; }
-        [ForeignKey("customerLocationsHeaderId")]
-        public virtual customerLocationsHeader customerLocationsHeader { get; set; }
+        //[Column(Order = 200)]
+        //[Display(Name = "ID of the customerLocations Header")]
+        //public System.Guid customerLocationsHeaderId { get; set; }
+        //[ForeignKey("customerLocationsHeaderId")]
+        //public virtual customerLocationsHeader customerLocationsHeader { get; set; }
 
 
         //Name of the Customer Part
@@ -44,8 +44,8 @@ namespace FFM.DataAccessModels.App
         public string description { get; set; }
 
 
-        public List<routeCustomerParts> routeCustomerParts { get; set; }
-        public List<orderParts> orderParts { get; set; }
+        //public List<routeCustomerParts> routeCustomerParts { get; set; }
+        //public List<orderParts> orderParts { get; set; }
 
     }
 }

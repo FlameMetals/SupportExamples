@@ -9,6 +9,6 @@ namespace FFM.DataAccessModels.App
     public class customerPartsHeader : tableHeaderParent
     {
         public List<customerParts> customerParts { get; set; }
-        public List<customerPartImages> customerPartImages { get; set; }
+        //public List<customerPartImages> customerPartImages { get; set; }
     }
 }
