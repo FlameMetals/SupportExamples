@@ -1,6 +1,6 @@
 using System;
 
-namespace API
+namespace FFM.API
 {
     public class WeatherForecast
     {

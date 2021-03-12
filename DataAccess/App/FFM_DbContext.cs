@@ -18,6 +18,7 @@ namespace FFM.DataAccess.App
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseSqlServer(connectionString);
+            //optionsBuilder.UseSqlite("Data Source=sqlitedemo.db");
         }
 
     }
