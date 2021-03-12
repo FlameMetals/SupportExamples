@@ -1,6 +1,6 @@
 using System;
 
-namespace EFCore50
+namespace API
 {
     public class WeatherForecast
     {
