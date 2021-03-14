@@ -24,7 +24,9 @@ namespace FFM.API
                 try
                 {
                     var context = scope.ServiceProvider.GetService<FFM_DbContext>();
+                    context.Database.EnsureCreated();
                     context.Database.Migrate();
+                    context.Database.EnsureCreated();
                 }
                 catch (Exception exception)
                 {

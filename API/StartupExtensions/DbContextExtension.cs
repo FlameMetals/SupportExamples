@@ -21,8 +21,10 @@ namespace FFM.API.StartupExtensions
             //var connectionString = @"Server=mi3-wsq3.a2hosting.com; Database=ctgcontr_FfmDBContext;User Id=ctgcontr_FfmDBContext; Password=Dngk41?2;";
             services.AddDbContext<FFM.DataAccess.App.FFM_DbContext>
                 (
-                    options => options.UseSqlite(Configuration.GetConnectionString("App"), b => b.MigrationsAssembly("DataAccess")
-               ));
+                    //options => options.UseSqlite(Configuration.GetConnectionString("App"), b => b.MigrationsAssembly("DataAccess"))
+
+                    options => options.UseInMemoryDatabase("FFM_DbContext")
+               );
 
 
         }

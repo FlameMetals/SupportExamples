@@ -9,6 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using FFM.DataAccess.App;
 using FFM.DataAccessModels.App;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace FFM.API.Controllers
 {
@@ -53,15 +55,29 @@ namespace FFM.API.Controllers
         {
             try
             {
+                var options = new JsonSerializerOptions()
+                {
+                    MaxDepth = 32,
+                    //IgnoreNullValues = true,
+                    IgnoreReadOnlyProperties = true,
+                    ReferenceHandler = ReferenceHandler.IgnoreCycles,
+                    WriteIndented = true,
+                    //Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+                };
+
                 if (id == null) id = Guid.Parse("5AB4CB69-7982-44FA-97CD-03E1D386E5E6");
-                var _modelHeader = await (from tblHeader in _FFM_DbContext.orderPartsHeader
+                FFM.DataAccessModels.App.orderPartsHeader _modelHeader = 
+                                            await _FFM_DbContext.orderPartsHeader
+                                            .Where(m => m.id == id)
+                                            //.AsSplitQuery()
                                             .Include(x => x.orderParts.OrderByDescending(x => x.createdOnDate).Take(1))
                                             .ThenInclude(x => x.customerParts.customerPartsHeader.customerParts.OrderByDescending(x => x.createdOnDate).Take(1))
+                                            .FirstOrDefaultAsync(m => m.id == id)
+                                            ;
+                //var results = JsonSerializer.Serialize(_modelHeader, options);
+                return Content(JsonSerializer.Serialize(_modelHeader, options), "application/json");
 
-                                          where tblHeader.id == id
-                                          select tblHeader).FirstOrDefaultAsync();
-
-                return StatusCode(200, _modelHeader);
+                return StatusCode(200, JsonSerializer.Serialize(_modelHeader, options));
             }
             catch (Exception exception)
             {
