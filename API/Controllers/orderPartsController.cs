@@ -57,6 +57,7 @@ namespace FFM.API.Controllers
             {
                 var options = new JsonSerializerOptions()
                 {
+                    AllowTrailingCommas = true,
                     MaxDepth = 32,
                     //IgnoreNullValues = true,
                     IgnoreReadOnlyProperties = true,
@@ -75,9 +76,10 @@ namespace FFM.API.Controllers
                                             .FirstOrDefaultAsync(m => m.id == id)
                                             ;
                 //var results = JsonSerializer.Serialize(_modelHeader, options);
+                
                 return Content(JsonSerializer.Serialize(_modelHeader, options), "application/json");
 
-                return StatusCode(200, JsonSerializer.Serialize(_modelHeader, options));
+                //return StatusCode(200, JsonSerializer.Serialize(_modelHeader, options).ToString());
             }
             catch (Exception exception)
             {
