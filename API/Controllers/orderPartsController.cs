@@ -75,8 +75,15 @@ namespace FFM.API.Controllers
                                             .ThenInclude(x => x.customerParts.customerPartsHeader.customerParts.OrderByDescending(x => x.createdOnDate).Take(1))
                                             .FirstOrDefaultAsync(m => m.id == id)
                                             ;
+
+
+                var _modelHeader2 = await (from tblHeader in _FFM_DbContext.orderPartsHeader
+                                            .Include(x => x.orderParts.OrderByDescending(x => x.createdOnDate).Take(1))
+                                            .ThenInclude(x => x.customerParts.customerPartsHeader.customerParts.OrderByDescending(x => x.createdOnDate).Take(1))
+                                          where tblHeader.id == id
+                                          select tblHeader).FirstOrDefaultAsync();
                 //var results = JsonSerializer.Serialize(_modelHeader, options);
-                
+
                 return Content(JsonSerializer.Serialize(_modelHeader, options), "application/json");
 
                 //return StatusCode(200, JsonSerializer.Serialize(_modelHeader, options).ToString());

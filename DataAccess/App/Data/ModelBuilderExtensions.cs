@@ -41,7 +41,7 @@ namespace FFM.DataAccess.App
                     createdByUserId = Guid.Parse("31A1793A-9453-48CD-9909-7C157DAE6A8A"),
                     createdByIp = "",
                     customerPartsHeaderId = Guid.Parse("596EFBFF-8C30-4B75-BFDB-EF7E05B5F96D"),
-                    userfriendlyName = "Part Revision 1",
+                    userfriendlyName = "OLD CUSTOMER PART",
                     name = "name 1",
                     description = "desc 1"
                 },
@@ -52,7 +52,7 @@ namespace FFM.DataAccess.App
                     createdByUserId = Guid.Parse("31A1793A-9453-48CD-9909-7C157DAE6A8A"),
                     createdByIp = "",
                     customerPartsHeaderId = Guid.Parse("596EFBFF-8C30-4B75-BFDB-EF7E05B5F96D"),
-                    userfriendlyName = "Part Revision 2",
+                    userfriendlyName = "NEW CUSTOMER PART",
                     name = "Name Changed",
                     description = "New Description"
                 }
@@ -83,7 +83,7 @@ namespace FFM.DataAccess.App
             modelBuilder.Entity<DataAccessModels.App.orderParts>().HasData(
                 new DataAccessModels.App.orderParts
                 {
-                    id = Guid.Parse("BF4349A0-2CBA-4646-BAA7-0BAFEEBA9F8C"),
+                    id = Guid.Parse("579F9060-4B69-4AC6-B1D1-D7988F3F5D26"),
                     createdOnDate = new DateTime(2018, 12, 17, 9, 32, 20, 426, DateTimeKind.Unspecified),
                     createdByUserId = Guid.Parse("31A1793A-9453-48CD-9909-7C157DAE6A8A"),
                     createdByIp = "",
