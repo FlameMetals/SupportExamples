@@ -24,7 +24,7 @@ namespace FFM.API.StartupExtensions
                     //options => options.UseSqlite(Configuration.GetConnectionString("App"), b => b.MigrationsAssembly("DataAccess"))
 
                     options => options.UseInMemoryDatabase("FFM_DbContext")
-               );
+               ) ;
 
 
         }
