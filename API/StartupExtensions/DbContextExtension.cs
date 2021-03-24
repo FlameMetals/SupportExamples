@@ -22,7 +22,7 @@ namespace FFM.API.StartupExtensions
             services.AddDbContext<FFM.DataAccess.App.FFM_DbContext>
                 (
                     //options => options.UseSqlite(Configuration.GetConnectionString("App"), b => b.MigrationsAssembly("DataAccess"))
-
+                    //options => options.UseSqlServer(Configuration.GetConnectionString("App"), b => b.MigrationsAssembly("DataAccess"))
                     options => options.UseInMemoryDatabase("FFM_DbContext")
                ) ;
 
