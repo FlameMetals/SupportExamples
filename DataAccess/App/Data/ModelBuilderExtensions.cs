@@ -52,8 +52,19 @@ namespace FFM.DataAccess.App
                     createdByUserId = Guid.Parse("31A1793A-9453-48CD-9909-7C157DAE6A8A"),
                     createdByIp = "",
                     customerPartsHeaderId = Guid.Parse("596EFBFF-8C30-4B75-BFDB-EF7E05B5F96D"),
-                    userfriendlyName = "NEW CUSTOMER PART",
-                    name = "Name Changed",
+                    userfriendlyName = "Second NEW CUSTOMER PART",
+                    name = "Second Name Changed",
+                    description = "New Description"
+                },
+                new DataAccessModels.App.customerParts
+                {
+                    id = Guid.Parse("d50a0954-4e64-4ed5-bb06-fb980d29f27c"),
+                    createdOnDate = new DateTime(2019, 1, 17, 9, 32, 20, 426, DateTimeKind.Unspecified),
+                    createdByUserId = Guid.Parse("31A1793A-9453-48CD-9909-7C157DAE6A8A"),
+                    createdByIp = "",
+                    customerPartsHeaderId = Guid.Parse("596EFBFF-8C30-4B75-BFDB-EF7E05B5F96D"),
+                    userfriendlyName = "FIRST NEW CUSTOMER PART",
+                    name = "First Name Changed",
                     description = "New Description"
                 }
 
